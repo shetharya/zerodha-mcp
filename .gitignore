@@ -1,9 +1,18 @@
-# Ignore environment secrets
+# Secrets — never upload these
 .env
 .env.token
 
-# Ignore installed dependencies
+# Dependencies
 node_modules/
 
-# Ignore VS Code local settings
+# Python virtual environment
+venv/
+.venv/
+
+# Build output
+dist/
+*.js
+*.js.map
+
+# VS Code
 .vscode/

@@ -1,7 +1,9 @@
 // Import required modules (CommonJS style)
-const { KiteConnect } = require("kiteconnect");
-const fs = require("fs");
-const dotenv = require("dotenv");
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { KiteConnect } from "kiteconnect";
+import * as fs from "fs";
+import * as dotenv from "dotenv";
 
 // Load environment variables from .env and .env.token
 dotenv.config();
@@ -9,11 +11,11 @@ dotenv.config({ path: ".env.token" }); // Load ACCESS_TOKEN from .env.token
 
 // Initialize KiteConnect
 const kc = new KiteConnect({
-  api_key: process.env.API_KEY,
+  api_key: process.env.API_KEY!,
 });
 
 // Set access token
-kc.setAccessToken(process.env.ACCESS_TOKEN);
+kc.setAccessToken(process.env.ACCESS_TOKEN!);
 
 // Place order to BUY GOLDBEES ETF
 kc.placeOrder("regular", {
@@ -30,3 +32,4 @@ kc.placeOrder("regular", {
   .catch((err: any) => {
     console.error("❌ Order failed:", err);
   });
+

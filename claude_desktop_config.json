@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+        "zerodha-trading-bot": {
+            "command": "node",
+            "args": [
+                "d:/mcp_tradingbot/zerodha-trading-bot/dist/mcp-server.js"
+            ],
+            "env": {
+                "API_KEY": "u9zctxbzbz3wgno1",
+                "ACCESS_TOKEN": "bcd0rxxox07ksgmkmgj5bltnph91w1ae"
+            }
+        }
+    }
+}
